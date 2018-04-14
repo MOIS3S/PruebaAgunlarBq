@@ -1,0 +1,88 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Bq</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Proyectos <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" (click)="sendMeExplore()">Explora</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Aprende</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Ayuda</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<section>
+  <article class="">
+      <div class="nombre-apellido-container">
+        <img class="img-profile" src="http://storage.googleapis.com/bitbloq-next/images/avatar/5aace5d509d5f4001b7fdec3" alt="">
+        <p class="nombre">{{ profile.firstName }} {{ profile.lastName }} <span>{{ profile.username }}</span> </p>
+        <p class="total-proyectos">{{ (projects | total:term ) }} proyectos</p>
+      </div>
+  </article>
+</section>
+<section>
+  <article class="">
+    <div class="container-icor-social">
+      <button class="btn"><i class="fa fa-home"></i> Home</button>
+      <button class="btn"><i class="fa fa-bars"></i> Menu</button>
+      <button class="btn"><i class="fa fa-trash"></i> Trash</button>
+      <button class="btn"><i class="fa fa-close"></i> Close</button>
+      <button class="btn"><i class="fa fa-folder"></i> Folder</button>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light-grey">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"><i class="fa fa-th fa-lg" aria-hidden="true"></i><i class="fa fa-th-list fa-lg" aria-hidden="true"></i></a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <form class="form-inline">
+            <div class="input-group">
+              <div class="input-group-prepend">
+              </div>
+              <input type="text" class="form-control" placeholder="Filtrar por:">
+            </div>
+          </form>
+        </span>
+        <span class="navbar-text">
+          <form class="form-inline">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+              </div>
+              <input type="text" class="form-control" placeholder="Buscar..." [(ngModel)]="term" name="term">
+            </div>
+          </form>
+        </span>
+      </div>
+    </nav>
+  </article>
+  <article class="">
+    <div class="container-projects">
+    <div class="item" *ngFor="let project of (projects | filter:term)">
+      <!--<h4>{{ perfiles | json}}</h4>-->
+        <img src="http://storage.googleapis.com/bitbloq-next/images/project/{{project._id}}">
+        <div class="card-body">
+          <h5 class="card-title">{{ project.name }}</h5>
+          <p class="card-text"><a routerLink="perfil/{{ project.creator._id }}" class="link">de <span class="link-verde">{{ project.creator.username }}</span></a>  <span style="cursor: pointer" (click)="countLikes(project)">likes: {{ project.timesViewed }}</span> </p>
+        </div>
+    </div>
+    </div>
+  </article>
+</section>

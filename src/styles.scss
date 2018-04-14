@@ -1,0 +1,164 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.navbar-brand {
+  background-color: #82ad3a;
+  height: 56px;
+  width:100px;
+  margin-left: -18px;
+  padding: 13px;
+  position: absolute;
+}
+
+.navbar-nav {
+  margin-left: 100px;
+}
+.bg-light {
+  background-color: #5d6069 !important;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: white !important;
+}
+
+.nombre-apellido-container {
+    //border: 1px solid black;
+    height: 120px;
+}
+
+.img-profile {
+  //border: 1px solid black;
+  width: 140px;
+  border-radius: 50%;
+  margin-top: 30px;
+  margin-left: 40px;
+  z-index: 100;
+}
+
+.nombre {
+    font-weight: bold;
+    font-size: 1.3em;
+    //border: 1px solid black;
+    width: 49%;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-bottom: 0px;
+    display: inline-block;
+}
+
+.nombre span{
+  font-size: 0.6em;
+  color: #8c919b;
+  margin-left: 10px;
+}
+
+.total-proyectos {
+    //border: 1px solid black;
+    width: 10%;
+    text-align: right;
+    display:inline-block;
+    float: right;
+    color: grey;
+    font-weight: bold;
+    margin-top: 75px;
+    text-align: left;
+}
+
+.container-icor-social {
+  background-color: #f2f2f2;
+  height: 70px;
+  text-align: center;
+  padding-top: 25px;
+}
+
+.btn {
+  margin-left: 10px;
+  width: 150px;
+  background-color: white;
+}
+
+.bg-light-grey {
+  background-color: #f2f2f2;
+}
+
+.header-segundo{
+  height: 100px;
+}
+
+.explora {
+  width: 40%;
+  display: inline-block;
+  margin-top: 30px;
+  margin-left: 30px;
+  float: left;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.container-total {
+  width: 40%;
+  display: inline-block;
+  float: right;
+  text-align: right;
+  margin-right: 40px;
+  margin-top: 60px;
+  font-weight: bold;
+  color: #8c919b;
+}
+
+.container-projects {
+    padding-top: 50px;
+    background-color: #f2f2f2;
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    grid-gap: 20px;
+    justify-content: center;
+}
+
+.item {
+  padding: 0px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.2);
+}
+
+.item img {
+  max-width: 100%;
+  width: 100%;
+  height: 190px;
+}
+
+.card-body {
+    background-color: white;
+    height: 77px;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1em;
+}
+
+a{
+  text-decoration: none !important;
+  &:hover{
+    color: #8c919b;
+  }
+}
+
+.link{
+  color: #8c919b;
+  font-size: 12px;
+}
+
+.link-verde {
+  color: #82ad3a;
+  font-size: 12px;
+}
+
+.input-group-text{
+  background-color: white !important;
+}
